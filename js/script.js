@@ -35,7 +35,7 @@ totalBudgetButton.addEventListener("click", () => {
 //Function to Disable Edit and Delete
 
 const disableButtons = (bool) => {
-    let editButoon = document.getElementsByClassName("edit");
+    let editButtons = document.getElementsByClassName("edit");
     Array.from(editButtons).forEach(element => {
         element.disabled = bool;
     });
@@ -82,3 +82,22 @@ const listCreator = (expenseName, expenseValue) => {
     sublistContent.appendChild(deleteButton);
     document.getElementById("list").appendChild(sublistContent);
 }
+
+// function to add Expenses
+checkAmountButton.addEventListener("click",()=>{
+    //empty checks
+    if(!userAmount.value|| !productTitle.value){
+        productTitleError.classList.remove("hide");
+        return false
+    }
+    disableButtons(false);
+    let expenditure = parseInt(userAmount.value);
+    let sum = parseInt(expenditureValue.innerText)+expenditure;
+    expenditureValue.innerText =sum;
+    const totalBalance = tempAmount-sum;
+    balanceValue.innerText = totalBalance;
+//create list
+listCreator(productTitle.value,userAmount.value);
+productTitle.value="";
+userAmount.value = "";
+})
