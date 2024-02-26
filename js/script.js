@@ -32,3 +32,29 @@ totalBudgetButton.addEventListener("click", () => {
     totalBudget.value = "";
 });
 
+//Function to Disable Edit and Delete
+
+const disableButtons = (bool)=>{
+    let editButoon = document.getElementsByClassName("edit");
+    Array.from(editButtons).forEach(element=>{
+        element.disabled = bool;
+    });
+}
+
+//Function to Modify list Elements 
+const modifyElement = (element,edit=false) => {
+    let parentDiv = element.parentElement;
+    let currentBalance = balanceValue.innerText;
+    let currentExpenses = expenditureValue.innerText
+    let parentAmount = parentDiv.querySelector(".amount").innerText
+    if(edit){
+        let parentText  = parentDiv.querySelector(".product").innerText;
+        productTitle.value = parentText;
+        userAmount.value = parentAmount;
+        disableButtons(true);
+    }
+
+    balanceValue.innerText = parseInt(currentBalance) + parseInt(parentAmount);
+    expenditureValue.innerText = parseInt(currentExpenses) - parseInt(parentAmount);
+    parentDiv.remove();
+}
