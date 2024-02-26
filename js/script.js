@@ -34,21 +34,21 @@ totalBudgetButton.addEventListener("click", () => {
 
 //Function to Disable Edit and Delete
 
-const disableButtons = (bool)=>{
+const disableButtons = (bool) => {
     let editButoon = document.getElementsByClassName("edit");
-    Array.from(editButtons).forEach(element=>{
+    Array.from(editButtons).forEach(element => {
         element.disabled = bool;
     });
 }
 
 //Function to Modify list Elements 
-const modifyElement = (element,edit=false) => {
+const modifyElement = (element, edit = false) => {
     let parentDiv = element.parentElement;
     let currentBalance = balanceValue.innerText;
     let currentExpenses = expenditureValue.innerText
     let parentAmount = parentDiv.querySelector(".amount").innerText
-    if(edit){
-        let parentText  = parentDiv.querySelector(".product").innerText;
+    if (edit) {
+        let parentText = parentDiv.querySelector(".product").innerText;
         productTitle.value = parentText;
         userAmount.value = parentAmount;
         disableButtons(true);
@@ -57,4 +57,28 @@ const modifyElement = (element,edit=false) => {
     balanceValue.innerText = parseInt(currentBalance) + parseInt(parentAmount);
     expenditureValue.innerText = parseInt(currentExpenses) - parseInt(parentAmount);
     parentDiv.remove();
+}
+
+//Function Create List
+
+const listCreator = (expenseName, expenseValue) => {
+    let sublistContent = document.createElement("div");
+    sublistContent.classList.add("sublist-content", "flex-space");
+    list.appendChild(sublistContent);
+    sublistContent.innerHTML = `<p class="product">${expenseName}</p> <p class="amount">${expenseValue} </p>`;
+    let editButton = document.createElement("button");
+    editButton.classList.add("fa-solid" ,"fa-pen-to-square","edit");
+    editButton.style.fontSize = "24px";
+    editButton.addEventListener("click",()=>{
+        modifyElement(editButton,true);
+    });
+    let deleteButton = document.createElement("button");
+    deleteButton.classList.add("fa-solid","fa-trash","delete");
+    deleteButton.style.fontSize = "24px";
+    deleteButton.addEventListener("click",()=>{
+        modifyElement(deleteButton);
+    });
+    sublistContent.appendChild(editButton);
+    sublistContent.appendChild(deleteButton);
+    document.getElementById("list").appendChild(sublistContent);
 }
