@@ -1,31 +1,102 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat" , sans-serif;
-}
-:root{
-    --white-color:#fff;
-    --green-color:#50C878
-}
-.container{
-    width: 100%;
+    font-family: "Montserrat", sans-serif;
 }
 
-nav{
-display: flex;
-background-color: var(--green-color);
-width: 100%;
-justify-content: center;
-align-items: center;
-height: 9vh;
-padding-inline: 40vw;
-line-height: 9vh;
+:root {
+    --white-color: #fff;
+    --blue-color: #50b0c8;
 }
-.navHeader h2{
+
+main {
+    background-color: #e7eef6;
+}
+
+.container {
+    width: 100%;
+    font-size: 16px;
+}
+
+
+.navHeader h2 {
     font-weight: 600;
     color: var(--white-color);
-   
- }
+
+}
+
+
+
+nav {
+    display: flex;
+    background-color: var(--blue-color);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 9vh;
+    padding-inline: 40vw;
+    line-height: 9vh;
+}
+
+.sub-container {
+    width: 90%;
+    max-width: 45em;
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container h3 {
+    color: #363d55;
+    font-weight: 500;
+    margin-bottom: 0.6em;
+}
+
+.container input {
+    display: block;
+    width: 100%;
+    padding: 0.6em 0.3em;
+    border: 1px solid #d0d0d0;
+    border-radius: 0.3em;
+    color: #414a67;
+    outline: none;
+
+}
+
+.container input:focus {
+    border-color: #587ef4;
+}
+
+.BudgetContainer,
+.user-amount-container {
+    background-color: var(--white-color);
+    padding: 1.25em 0.9em;
+    border-radius: 0.3em;
+    
+}
+
+@media screen and (max-width:640px) {
+    .navHeader h2 {
+        font-size: 14px;
+    }
+
+    nav {
+        line-height: 4vh;
+        font-weight: 400;
+    }
+}

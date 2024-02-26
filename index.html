@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/style.css">
     <title>Expense Tracker</title>
 </head>
+
 <body>
     <main>
         <div class="container">
@@ -14,7 +16,44 @@
                     <h2> Expense Tracker</h2>
                 </div>
             </nav>
+
+            <div class="sub-container">
+                <!--Budget-->
+
+                <div class="BudgetContainer">
+                    <h3>Budget</h3>
+                    <p class="hide_error" id="budget_error">Value cannot be empty or negative</p>
+                    <input type="number" id="total_budget" placeholder="Enter total amount">
+                    <button class="sumbit" id="total_budget_btn">Set Budget</button>
+                </div>
+                <!--Expenses-->
+                <div class="user-amount-container">
+                    <h3>Expenses</h3>
+                    <p class="hide_error" id="product_title _error">Value cannot be empty</p>
+                    <input type="text" class="product_title" id="product_title" placeholder="Enter Title of Product">
+                    <input type="number" id="user_amount" placeholder="Enter Cost of Product">
+                    <button class="submit" id="check_amount">Check Amount</button>
+                </div>
+            </div>
+            <!--output-->
+            <div class="output-container flex-space">
+                <div>
+                    <p>Total Budget</p>
+                <span id="amount">0</span>
+                </div>
+                <div>
+                    <p>Expense</p>
+                <span id="expenditure-value">0</span>
+                </div><div>
+                    <p>Balance</p>
+                <span id="Balance">0</span>
+                </div>
+            </div>
+            <div class="list">
+                
+            </div>
         </div>
     </main>
 </body>
+
 </html>
