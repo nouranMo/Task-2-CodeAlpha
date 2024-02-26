@@ -22,14 +22,14 @@
 
                 <div class="BudgetContainer">
                     <h3>Budget</h3>
-                    <p class="hide_error" id="budget_error">Value cannot be empty or negative</p>
+                    <p class="hide error" id="budget_error">Value cannot be empty or negative</p>
                     <input type="number" id="total_budget" placeholder="Enter total amount">
-                    <button class="sumbit" id="total_budget_btn">Set Budget</button>
+                    <button class="submit" id="total_budget_btn">Set Budget</button>
                 </div>
                 <!--Expenses-->
                 <div class="user-amount-container">
                     <h3>Expenses</h3>
-                    <p class="hide_error" id="product_title _error">Value cannot be empty</p>
+                    <p class="hide error" id="product_title _error">Value cannot be empty</p>
                     <input type="text" class="product_title" id="product_title" placeholder="Enter Title of Product">
                     <input type="number" id="user_amount" placeholder="Enter Cost of Product">
                     <button class="submit" id="check_amount">Check Amount</button>
@@ -50,10 +50,12 @@
                 </div>
             </div>
             <div class="list">
-                
+                <h3>Expenses List</h3>
+                <div class="list-container" id="list"></div>
             </div>
         </div>
     </main>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
