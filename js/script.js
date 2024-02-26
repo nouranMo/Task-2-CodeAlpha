@@ -1,0 +1,13 @@
+let totalBudget = document.getElementById("total_budget");
+let userAmount = document.getElementById("user_amount");
+const totalBudgetButton = document.getElementById("total_budget_btn");
+const checkAmountButton = document.getElementById("check_amount");
+const productTitle = document.getElementById("product_title");
+const errorMessage = document.getElementById("budget_error");
+const productTitleError = document.getElementById("product_title _error");
+const productCostError = document.getElementById("");
+const amount = document.getElementById("amount");
+const expenditureValue = document.getElementById("expenditure-value");
+const balanceValue = document.getElementById("Balance");
+const list = document.getElementById("list");
+let tempAmount = 0;
